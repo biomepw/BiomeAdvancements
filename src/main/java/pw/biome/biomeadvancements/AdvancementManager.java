@@ -13,12 +13,14 @@ public class AdvancementManager {
     private static Advancement ROOT;
     private static Advancement EXPLOSIVE_PERSONALITY;
     private static Advancement CRIPPLING_GAMBLING;
+    private static Advancement RED_BULL_GIVES_YOU_WINGS;
 
     public static void loadAchievements() {
         AdvancementFactory factory = new AdvancementFactory(BiomeAdvancements.getInstance(), true, false);
         ROOT = factory.getRoot("biome/root", "Biome Advancements", "Biome Advancements", Material.PLAYER_HEAD, "block/dirt");
         EXPLOSIVE_PERSONALITY = factory.getItem("biome/tnt", ROOT, "Explosive personality!", "Craft some TNT", Material.TNT);
         CRIPPLING_GAMBLING = factory.getItem("biome/gambler", ROOT, "Crippling gambling addiction", "Gamble at the casino", Material.GOLD_INGOT);
+        RED_BULL_GIVES_YOU_WINGS = factory.getImpossible("biome/redbull", ROOT, "Red bull gives you wings!", "Fly for the first time.", Material.ELYTRA);
 
         Bukkit.reloadData();
     }
@@ -33,6 +35,10 @@ public class AdvancementManager {
 
     public static Advancement getCripplingGambling() {
         return CRIPPLING_GAMBLING;
+    }
+
+    public static Advancement getRedBullGivesYouWings() {
+        return RED_BULL_GIVES_YOU_WINGS;
     }
 
     public static org.bukkit.advancement.Advancement getAdvancementFromKey(NamespacedKey key) {

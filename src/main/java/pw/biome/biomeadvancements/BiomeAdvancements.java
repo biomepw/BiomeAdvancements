@@ -1,6 +1,8 @@
 package pw.biome.biomeadvancements;
 
+import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import pw.biome.biomeadvancements.listeners.RedBullGivesYouWingsListener;
 
 public final class BiomeAdvancements extends JavaPlugin {
 
@@ -9,14 +11,16 @@ public final class BiomeAdvancements extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
+        registerListeners();
         AdvancementManager.loadAchievements();
-    }
-
-    @Override
-    public void onDisable() {
     }
 
     public static BiomeAdvancements getInstance() {
         return instance;
+    }
+
+    private void registerListeners() {
+        PluginManager pluginManager = getServer().getPluginManager();
+        pluginManager.registerEvents(new RedBullGivesYouWingsListener(), instance);
     }
 }
