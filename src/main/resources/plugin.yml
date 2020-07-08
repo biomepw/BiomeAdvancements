@@ -1,0 +1,4 @@
+name: BiomeAdvancements
+version: ${project.version}
+main: pw.biome.biomeadvancements.BiomeAdvancements
+api-version: 1.16
