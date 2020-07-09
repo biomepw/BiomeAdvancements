@@ -26,7 +26,9 @@ public class RedBullGivesYouWingsListener implements Listener {
 
     private boolean hasElytraEquipped(ItemStack[] armourContents) {
         for (ItemStack itemStack : armourContents) {
-            if (itemStack.getType() == Material.ELYTRA) return true;
+            if (itemStack != null) {
+                if (itemStack.getType() == Material.ELYTRA) return true;
+            }
         }
         return false;
     }
