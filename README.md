@@ -1,1 +1,1 @@
-# BiomeAdvancements ![build status](https://ci.husk.pro/BiomeAdvancements/badge)
+# BiomeAdvancements ![build status](https://ci.biome.pw/BiomeAdvancements/badge)
